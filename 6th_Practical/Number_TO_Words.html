@@ -1,26 +1,84 @@
-<html> 
+<!DOCTYPE html>
+<html lang="en">
 <head> 
-    <title>HTML - Convert Numbers to Words Using JavaScript</title> 
-    <script language="javascript"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number to Words Converter</title> 
+    <style> 
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+        h1 {
+            color: #6a0572;
+            font-size: 26px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: 400px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        input {
+            font-size: 20px;
+            padding: 10px;
+            width: 90%;
+            border-radius: 8px;
+            border: 2px solid #6a0572;
+            outline: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            background-color: #efefef;
+        }
+        input:hover, input:focus {
+            border-color: #ff4081;
+            background-color: #fff;
+        }
+        #divDisplayWords {
+            font-size: 24px;
+            color: #ff4081;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style> 
+</head> 
+<body> 
+    <div class="container">
+        <h1>Convert Numbers to Words</h1> 
+        <input id="Text1" type="text" onkeypress="return isNumberKey(event)" 
+            onkeyup="NumToWord(this.value,'divDisplayWords');" maxlength="3"
+            placeholder="Enter a number (0-999)"> 
+        <div id="divDisplayWords"></div> 
+    </div>
+
+    <script> 
         function isNumberKey(evt) { 
             var charCode = (evt.which) ? evt.which : evt.keyCode; 
-            if (charCode != 46 && charCode > 31 && (charCode < 48 || charCode > 57)) 
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) 
                 return false; 
             return true; 
         } 
-    </script> 
 
-    <script> 
         function NumToWord(inputNumber, outputControl) { 
             var str = new String(inputNumber); 
             var splt = str.split(""); 
             var rev = splt.reverse(); 
 
-            var once = ['Zero', ' One', ' Two', ' Three', ' Four', ' Five', ' Six', ' Seven', ' Eight', ' Nine']; 
-            var twos = ['Ten', ' Eleven', ' Twelve', ' Thirteen', ' Fourteen', ' Fifteen', ' Sixteen', 
-                ' Seventeen', ' Eighteen', ' Nineteen']; 
-            var tens = ['', 'Ten', ' Twenty', ' Thirty', ' Forty', ' Fifty', ' Sixty', ' Seventy', ' Eighty', 
-                ' Ninety']; 
+            var once = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine']; 
+            var twos = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 
+                'Seventeen', 'Eighteen', 'Nineteen']; 
+            var tens = ['', 'Ten', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 
+                'Ninety']; 
 
             var numLength = rev.length; 
             var word = new Array(); 
@@ -76,15 +134,5 @@
             document.getElementById(outputControl).innerHTML = finalOutput; 
         } 
     </script> 
-</head> 
-
-<body> 
-    <h1>HTML - Convert Numbers to Words Using JavaScript</h1> 
-    <input id="Text1" type="text" onkeypress="return isNumberKey(event)" 
-        onkeyup="NumToWord(this.value,'divDisplayWords');" maxlength="3" 
-        style="background-color: #efefef; border: 2px solid #CCC; font-size: large;" /> 
-    <br /> <br /> 
-    <div id="divDisplayWords" style="font-size: 30px; color: Teal; font-family: Arial;"> 
-    </div> 
 </body> 
 </html>

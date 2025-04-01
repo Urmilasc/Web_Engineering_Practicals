@@ -1,20 +1,65 @@
-<html> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Current Date</title>
+    <script>
+        function display() { 
+            const d = new Date();
+            let date = d.getDate();
+            let month = d.getMonth() + 1; // Adjust for zero-based index
+            let year = d.getFullYear();
+            
+            // Format month and day for consistent display (e.g., 01 instead of 1)
+            date = date < 10 ? "0" + date : date;
+            month = month < 10 ? "0" + month : month;
+
+            document.getElementById("dis").value = `${date}/${month}/${year}`; 
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        input[type="text"] {
+            width: 150px;
+            padding: 8px;
+            font-size: 16px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
 <body> 
-<script> 
-function display(){ 
-var x="You have clicked"; 
-var d=new Date(); 
-var date=d.getDate(); 
-var 
-month=d.getMonth(); 
-month++; 
-var year=d.getFullYear(); 
-document.getElementById("dis").value=date+"/"+month+"/"+year; 
-} 
-</script> 
-<form> 
-<input type="text" id="dis" /><br /> 
-<input type="button" value="Display Date" onclick="display()" /> 
-</form> 
-<body> 
-</html> 
+    <div class="container">
+        <h2>Display Current Date</h2>
+        <input type="text" id="dis" readonly /><br>
+        <button onclick="display()">Show Date</button>
+    </div>
+</body> 
+</html>

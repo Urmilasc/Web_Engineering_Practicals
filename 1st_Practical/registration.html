@@ -1,19 +1,77 @@
 <html>
-<head><title>Registration Form</title></head>
-<body bgcolor="#E4F0F8">
-<center><font color="blue" size="6" face="arial">Registration Form</font></center><br />
-<form action="right.html">
-First Name(Minimum 6 characters)<font color="red">* </font>
-<input type='text' id='firstname' /><br /><br />
-Last Name<font color="red"><font color="red">* </font> </font> &nbsp;&nbsp;&nbsp;
-<input type='text' id='lastname' /><br /><br /> EmailAddress<font color="red">* </font> &nbsp;&nbsp;&nbsp;
-<input type='text' id='email' /><br />
-<font color="red">(one e-mail id only):</font> &nbsp;&nbsp;&nbsp;
-<font color="redblue">e.g. smith@hotmail.com</font><br /><br/> Password(minimum 6 characters)<font color="red">* </font> &nbsp;&nbsp;&nbsp;
-<input type='password' id='pass'><br /><br/> Address<font color="red">* </font> &nbsp;&nbsp;&nbsp;
-<textarea rows="2" cols="20" id='addr' /></textarea> <br /> <br/> Mobile No<font color="red">* </font> &nbsp;&nbsp;&nbsp;
-<input type='text' id='mobileno' /><br /> Gender: <input type='radio' name="gender">male
-<input type='radio' name="gender">female<br/><br />
-<input type='Submit' value='submit' />
-<input type='Reset' value='reset' />
-</form>	</body>	</html>
+<head>
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: #E4F0F8;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px gray;
+        }
+        h2 {
+            color: blue;
+            text-align: center;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type='submit'], input[type='reset'] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 49%;
+        }
+        input[type='submit']:hover, input[type='reset']:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form action="right.html">
+            <label>First Name (Minimum 6 characters)<span style="color: red;">*</span></label>
+            <input type='text' id='firstname' />
+            
+            <label>Last Name<span style="color: red;">*</span></label>
+            <input type='text' id='lastname' />
+            
+            <label>Email Address<span style="color: red;">*</span></label>
+            <input type='text' id='email' />
+            <small style="color: red;">(one e-mail id only, e.g. smith@hotmail.com)</small>
+            
+            <label>Password (Minimum 6 characters)<span style="color: red;">*</span></label>
+            <input type='password' id='pass'>
+            
+            <label>Address<span style="color: red;">*</span></label>
+            <textarea rows="2" cols="20" id='addr'></textarea>
+            
+            <label>Mobile No<span style="color: red;">*</span></label>
+            <input type='text' id='mobileno' />
+            
+            <label>Gender:</label>
+            <input type='radio' name="gender"> Male
+            <input type='radio' name="gender"> Female
+            
+            <br/><br/>
+            <input type='submit' value='Submit' />
+            <input type='reset' value='Reset' />
+        </form>
+    </div>
+</body>
+</html>

@@ -1,24 +1,70 @@
-<html> 
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sum of N Numbers Using Popup Boxes</title>
-    <script language="javascript"> 
+    <script>
         function addsum() { 
-            alert("You're going to give me a list of numbers. I'm going to add them together for you."); 
-            var keepgoing = true; 
-            var sumofnums = 0; 
+            alert("You're going to enter numbers, and I'll sum them for you!"); 
             
-            while (keepgoing) { 
-                sumofnums = sumofnums + parseInt(prompt("What's the next number to add?", ""), 10); 
-                keepgoing = confirm("Add another number?"); 
-            } 
-            
-            alert("The sum of all your numbers is " + sumofnums); 
-        } 
-    </script> 
+            let sum = 0;
+            let keepGoing = true;
+
+            while (keepGoing) {
+                let input = prompt("Enter a number to add:", "").trim();
+                
+                if (input === null || input === "") {
+                    alert("Input was empty or cancelled. Exiting...");
+                    break;
+                }
+
+                let num = parseFloat(input);
+                
+                if (isNaN(num)) {
+                    alert("That's not a valid number. Try again!");
+                    continue;
+                }
+
+                sum += num;
+                keepGoing = confirm("Want to add another number?");
+            }
+
+            alert("The total sum of all numbers is: " + sum);
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
 </head> 
 <body> 
-    <form name="frm"> 
-        <input type="button" value="Sum of N Numbers" onclick="addsum();"> 
-    </form> 
+    <div class="container">
+        <h2>Sum of N Numbers</h2>
+        <button onclick="addsum();">Calculate Sum</button>
+    </div>
 </body> 
 </html>

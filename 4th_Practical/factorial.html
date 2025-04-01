@@ -1,22 +1,63 @@
-<html> 
-<head> 
-    <title>Factorial</title> 
-    <script language="javascript"> 
-        function factorialcalc() { 
-            var number = parseInt(prompt("Enter a number, I'll calculate its factorial", "Whole numbers bigger than zero, please")); 
-            var factorial = 1; 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <script>
+        function factorialCalc() {
+            let number = prompt("Enter a number, I'll calculate its factorial", "Whole numbers greater than or equal to zero, please");
 
-            for (var i = 1; i <= number; i++) { 
-                factorial = factorial * i; 
-            } 
+            // Convert to integer
+            number = parseInt(number, 10);
 
-            alert("The factorial of " + number + " is " + factorial); 
-        } 
-    </script> 
-</head> 
-<body> 
-    <form name="frm"> 
-        <input type="button" value="Factorial" onclick="factorialcalc();"> 
-    </form> 
-</body> 
+            // Validate input
+            if (isNaN(number) || number < 0) {
+                alert("Please enter a valid non-negative integer.");
+                return;
+            }
+
+            let factorial = 1;
+            for (let i = 1; i <= number; i++) {
+                factorial *= i;
+            }
+
+            alert(`The factorial of ${number} is ${factorial}`);
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin-top: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #218838;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Factorial Calculator</h2>
+        <button onclick="factorialCalc()">Calculate Factorial</button>
+    </div>
+</body>
 </html>

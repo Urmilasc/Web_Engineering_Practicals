@@ -1,28 +1,83 @@
-<html> 
+<!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Multiplication Table</title>
-</head> 
-<body> 
-    <script type="text/javascript"> 
-        var n = prompt("Enter positive value for n:", " "); 
-        
-        if (!isNaN(n)) { 
-            var table = ""; 
-            var number = ""; 
-
-            for (var i = 1; i <= 10; i++) { 
-                number = n * i; 
-                table += n + " * " + i + " = " + number + "\n"; 
-            } 
-
-            alert(table); 
-        } 
-        else { 
-            alert("Enter a positive value"); 
-            n = prompt("Enter positive value for n:", " "); 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin-top: 50px;
         }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #28a745;
+            color: white;
+        }
+        td {
+            background-color: #fff;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
 
-        document.write(n + " table values displayed using alert..<br />"); 
-    </script> 
-</body> 
+    <div class="container">
+        <h2>Multiplication Table</h2>
+        <button onclick="generateTable()">Generate Table</button>
+        <div id="tableOutput"></div>
+    </div>
+
+    <script>
+        function generateTable() {
+            let n = prompt("Enter a positive number:", "");
+
+            // Validate input
+            if (isNaN(n) || n <= 0) {
+                alert("Please enter a valid positive number.");
+                return;
+            }
+
+            let tableHTML = "<table><tr><th>Multiplication</th><th>Result</th></tr>";
+
+            for (let i = 1; i <= 10; i++) {
+                tableHTML += `<tr><td>${n} × ${i}</td><td>${n * i}</td></tr>`;
+            }
+
+            tableHTML += "</table>";
+
+            document.getElementById("tableOutput").innerHTML = tableHTML;
+        }
+    </script>
+
+</body>
 </html>

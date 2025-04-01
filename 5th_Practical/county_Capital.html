@@ -1,42 +1,94 @@
-<html> 
+<!DOCTYPE html>
+<html lang="en">
 <head> 
-<title>WT Lab manual program no. 3</title> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country & Capital Finder</title> 
+    <style> 
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            text-align: center;
+            margin-top: 50px;
+            color: #333;
+        }
+        h1 {
+            color: #6a0572;
+            font-size: 26px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            width: 350px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .container:hover {
+            transform: scale(1.02);
+        }
+        label {
+            font-weight: bold;
+            color: #5a5a5a;
+        }
+        select, input {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px;
+            width: 90%;
+            border-radius: 8px;
+            border: 2px solid #6a0572;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        select {
+            background: #fff;
+            cursor: pointer;
+            color: #6a0572;
+            font-weight: bold;
+        }
+        select:hover, select:focus {
+            border-color: #ff4081;
+        }
+        .textbox1 {
+            color: #ff4081;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            background-color: #f3f3f3;
+            border: none;
+            font-style: italic;
+        }
+    </style> 
 </head> 
-<style> 
-h1 
-{ 
-color: red; 
-text-align: center; 
-} 
-.textbox1 
-{ 
-color: blue; 
-font-size: 30px; 
-font-weight: bold; 
-} 
-</style> 
 <body> 
-<center> 
-<h1> Select the country name to find its capital</h1> 
-<form name="myform"> 
-Select Country <select name="country" id="sbox1" onClick="myFunction()" required> 
-<option value=""></option> 
-<option value="NEW DELHI">INDIA</option> 
-<option value="CANBERRA">AUSTRALIA</option> 
-<option value="WASHINGTON D.C">AMERICA</option> 
-<option value="LONDON">UNITEDKINGDOM</option> 
-<option value="BERLIN">GERMANY</option> 
-</select><br><br> 
-Capital <input type="text" class="textbox1" id="sbox2"> 
-</form> 
-</center> 
-<script> 
-function myFunction() 
-{ 
-var a=document.getElementById("sbox1").value; 
-document.getElementById("sbox2").value=a; 
-}
-</script> 
-</body> 
 
-</html> 
+    <div class="container">
+        <h1>Select a Country to Find Its Capital</h1> 
+        <form name="myform"> 
+            <label for="sbox1">Select Country:</label> 
+            <select name="country" id="sbox1" onchange="myFunction()" required> 
+                <option value="" disabled selected>Choose a country</option> 
+                <option value="NEW DELHI">India</option> 
+                <option value="CANBERRA">Australia</option> 
+                <option value="WASHINGTON D.C">America</option> 
+                <option value="LONDON">United Kingdom</option> 
+                <option value="BERLIN">Germany</option> 
+            </select>
+            <br><br> 
+            <label for="sbox2">Capital:</label>
+            <input type="text" class="textbox1" id="sbox2" readonly placeholder="Capital will appear here"> 
+        </form> 
+    </div>
+
+    <script> 
+        function myFunction() { 
+            let selectedCapital = document.getElementById("sbox1").value; 
+            document.getElementById("sbox2").value = selectedCapital; 
+        }
+    </script> 
+
+</body> 
+</html>

@@ -1,42 +1,83 @@
-<html> 
-<head> 
-<style type="text/css"> 
-body 
-{ 
-background-image:url('images/cse.png'); 
-background-repeat:no-repeat; 
-background-position:center center; 
-background-attachment:fixed; 
-background-color:pink; 
-/* background-repeat : repeat;  */
-} 
-a:link { text-decoration:none;color:orange; } 
-a:visited { text-decoration:none;color:red; } 
-a:hover { text-decoration:underline;color:blue; } 
-a:active { text-decoration:underline;color:purple; } 
-h3 { color:green; } 
-.c1{cursor:crosshair} 
-.c2{cursor:pointer} 
-.c3{cursor:move} 
-.c4{cursor:text} 
-.c5{cursor:wait} 
-.c6{cursor:help} 
-</style> 
-<link rel="stylesheet" type="text/css" href="style.css"> 
-</head> 
-<body bgcolor="cyan"> 
-<h1 style="color:blue;text-align:center;"> CSS (Inline, Internal and External) </h1> 
-<p>This Paragraph is a Not Styled</p> 
-<p class="left">This Paragraph is Styled by class "Left"</p> 
-<p class="center">This Paragraph is Styled by class "Center"</p> 
-<p class="right">This Paragraph is Styled by class "Right"</p> 
-<b>This is normal Bold</b> <br> 
-<b id="headline">This Bold Text is Styled </b> 
-<h2><b><a href=" ">This is a link</a></b></h2> 
-<h3 class="c1">The cursor over this element is plus sign</h3> 
-<h3 class="c2">The cursor over this element is a pointing hand</h3> 
-<h3 class="c3">The cursor over this element is a grasping hand</h3> 
-<h3 class="c4">The cursor over this element is a I bar</h3> 
-<h3 class="c5">The cursor over this element is a wait</h3> 
-<h3 class="c6">The cursor over this element is a question mark</h3> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Styling - Inline, Internal, External</title>
+    <style>
+        body {
+            background-image: url('images/cse.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: #f0e6f6;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        a:link { color: #ff6600; }
+        a:visited { color: #cc0000; }
+        a:hover { text-decoration: underline; color: #0044cc; }
+        a:active { text-decoration: underline; color: #800080; }
+
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            font-size: 28px;
+            margin-top: 20px;
+        }
+
+        h3 {
+            color: #008000;
+        }
+
+        .cursor-container h3 {
+            padding: 5px;
+            margin: 5px 0;
+            border-radius: 5px;
+            background: #f0f8ff;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .c1 { cursor: crosshair; }
+        .c2 { cursor: pointer; background: #e3f2fd; }
+        .c3 { cursor: move; background: #f1f8e9; }
+        .c4 { cursor: text; background: #ede7f6; }
+        .c5 { cursor: wait; background: #ffebee; }
+        .c6 { cursor: help; background: #fff3e0; }
+    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+    <h1>CSS Styling (Inline, Internal, External)</h1>
+
+    <p>This paragraph is not styled.</p>
+    <p class="left">This paragraph is styled by class "Left".</p>
+    <p class="center">This paragraph is styled by class "Center".</p>
+    <p class="right">This paragraph is styled by class "Right".</p>
+
+    <b>This is normal Bold</b><br>
+    <b id="headline">This Bold Text is Styled</b>
+
+    <h2><b><a href="#">This is a link</a></b></h2>
+
+    <div class="cursor-container">
+        <h3 class="c1">The cursor over this element is a plus sign.</h3>
+        <h3 class="c2">The cursor over this element is a pointing hand.</h3>
+        <h3 class="c3">The cursor over this element is a grasping hand.</h3>
+        <h3 class="c4">The cursor over this element is an I-bar.</h3>
+        <h3 class="c5">The cursor over this element is a wait cursor.</h3>
+        <h3 class="c6">The cursor over this element is a question mark.</h3>
+    </div>
+
+</body>
 </html>

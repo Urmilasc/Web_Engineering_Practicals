@@ -5,18 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success Message</title>
     <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e4f0f8;
+        }
+
         .success-message {
-            color: green;
-            font-size: 20px;
-            font-weight: bold;
+            background-color: #d4edda;
+            padding: 30px;
+            border-radius: 10px;
+            border: 2px solid #c3e6cb;
             text-align: center;
-            margin-top: 20px;
+            max-width: 500px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .success-message h1 {
+            color: #28a745;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .success-message p {
+            color: #155724;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .icon {
+            font-size: 4rem;
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <div class="success-message">
-        ✅ Success Registration! 
+    <div class="container">
+        <div class="success-message">
+            <div class="icon">✅</div>
+            <h1>Success! Registration Complete</h1>
+            <p>Your registration has been successfully completed. You can now enjoy all the features.</p>
+            <a href="login.html" class="button">Go to Login</a>
+        </div>
     </div>
 </body>
 </html>
